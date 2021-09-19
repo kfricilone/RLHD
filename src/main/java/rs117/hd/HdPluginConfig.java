@@ -30,20 +30,21 @@ import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 import net.runelite.client.config.Range;
-import static rs117.hd.HdPlugin.MAX_DISTANCE;
-import static rs117.hd.HdPlugin.MAX_FOG_DEPTH;
 import rs117.hd.config.AntiAliasingMode;
 import rs117.hd.config.ColorBlindMode;
 import rs117.hd.config.Contrast;
+import rs117.hd.config.DefaultSkyColor;
+import rs117.hd.config.FogDepthMode;
 import rs117.hd.config.LevelOfDetail;
 import rs117.hd.config.MaxDynamicLights;
 import rs117.hd.config.Saturation;
-import rs117.hd.config.DefaultSkyColor;
-import rs117.hd.config.FogDepthMode;
 import rs117.hd.config.ShadowDistance;
 import rs117.hd.config.ShadowResolution;
 import rs117.hd.config.UIScalingMode;
 import rs117.hd.config.WaterEffects;
+
+import static rs117.hd.HdPlugin.MAX_DISTANCE;
+import static rs117.hd.HdPlugin.MAX_FOG_DEPTH;
 
 @ConfigGroup("hd")
 public interface HdPluginConfig extends Config
@@ -172,7 +173,10 @@ public interface HdPluginConfig extends Config
 		position = 9,
 		section = generalSettings
 	)
-	default int brightness() { return 20; }
+	default int brightness()
+	{
+		return 20;
+	}
 
 	@ConfigItem(
 		keyName = "levelOfDetail",
@@ -340,7 +344,8 @@ public interface HdPluginConfig extends Config
 		position = 203,
 		section = environmentSettings
 	)
-	default boolean groundFog() {
+	default boolean groundFog()
+	{
 		return true;
 	}
 

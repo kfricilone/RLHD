@@ -828,15 +828,19 @@ public class LightManager
 						continue;
 					}
 
-					if (expr.startsWith("/*")) {
+					if (expr.startsWith("/*"))
+					{
 						commentBlock = true;
 						continue;
-					} else if (expr.startsWith("*/")) {
+					}
+					else if (expr.startsWith("*/"))
+					{
 						commentBlock = false;
 						continue;
 					}
 
-					if (commentBlock) {
+					if (commentBlock)
+					{
 						continue;
 					}
 
@@ -873,10 +877,13 @@ public class LightManager
 							strength = Integer.parseInt(m.group("strength")) / 100f;
 							break;
 						case 'r':
-							if (expr.toLowerCase().startsWith("radius")) {
+							if (expr.toLowerCase().startsWith("radius"))
+							{
 								radius = Integer.parseInt(m.group("radius"));
 								break;
-							} else if (expr.toLowerCase().startsWith("range")) {
+							}
+							else if (expr.toLowerCase().startsWith("range"))
+							{
 								range = Integer.parseInt(m.group("range"));
 								break;
 							}
@@ -891,7 +898,8 @@ public class LightManager
 							break;
 						case 't':
 							String typeStr = m.group("type").toLowerCase().trim();
-							switch (typeStr) {
+							switch (typeStr)
+							{
 								case "flicker":
 									type = LightType.FLICKER;
 									break;
@@ -907,8 +915,10 @@ public class LightManager
 							int x = Integer.parseInt(m.group("x"));
 							int y = Integer.parseInt(m.group("y"));
 							Alignment alignment = Alignment.CENTER;
-							if (m.group("alignment") != null) {
-								switch (m.group("alignment").toLowerCase().trim()) {
+							if (m.group("alignment") != null)
+							{
+								switch (m.group("alignment").toLowerCase().trim())
+								{
 									case "n":
 										alignment = Alignment.NORTH;
 										break;

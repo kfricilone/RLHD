@@ -199,7 +199,7 @@ class ProceduralGenerator
 			vertexUnderlays[0] = vertexUnderlays[1] = vertexUnderlays[2] = vertexUnderlays[3] = client.getScene().getUnderlayIds()[z][x][y];
 			if (useDefaultColor(tile))
 			{
-				vertexDefaultColor[0] = vertexDefaultColor[1] =vertexDefaultColor[2] =vertexDefaultColor[3] = true;
+				vertexDefaultColor[0] = vertexDefaultColor[1] = vertexDefaultColor[2] = vertexDefaultColor[3] = true;
 			}
 		}
 		else if (tile.getSceneTileModel() != null)
@@ -390,9 +390,9 @@ class ProceduralGenerator
 					if (tiles[z][x][y] == null)
 					{
 						underwaterDepthLevels[z][x][y] = 0;
-						underwaterDepthLevels[z][x+1][y] = 0;
-						underwaterDepthLevels[z][x][y+1] = 0;
-						underwaterDepthLevels[z][x+1][y+1] = 0;
+						underwaterDepthLevels[z][x + 1][y] = 0;
+						underwaterDepthLevels[z][x][y + 1] = 0;
+						underwaterDepthLevels[z][x + 1][y + 1] = 0;
 						continue;
 					}
 
@@ -416,9 +416,9 @@ class ProceduralGenerator
 							}
 
 							underwaterDepthLevels[z][x][y] = 0;
-							underwaterDepthLevels[z][x+1][y] = 0;
-							underwaterDepthLevels[z][x][y+1] = 0;
-							underwaterDepthLevels[z][x+1][y+1] = 0;
+							underwaterDepthLevels[z][x + 1][y] = 0;
+							underwaterDepthLevels[z][x][y + 1] = 0;
+							underwaterDepthLevels[z][x + 1][y + 1] = 0;
 						}
 						else
 						{
@@ -433,9 +433,9 @@ class ProceduralGenerator
 									if (tileIsWater[checkZ][x][y])
 									{
 										underwaterDepthLevels[z][x][y] = 0;
-										underwaterDepthLevels[z][x+1][y] = 0;
-										underwaterDepthLevels[z][x][y+1] = 0;
-										underwaterDepthLevels[z][x+1][y+1] = 0;
+										underwaterDepthLevels[z][x + 1][y] = 0;
+										underwaterDepthLevels[z][x][y + 1] = 0;
+										underwaterDepthLevels[z][x + 1][y + 1] = 0;
 
 										skipTile[z][x][y] = true;
 
@@ -487,9 +487,9 @@ class ProceduralGenerator
 									if (tileIsWater[checkZ][x][y])
 									{
 										underwaterDepthLevels[z][x][y] = 0;
-										underwaterDepthLevels[z][x+1][y] = 0;
-										underwaterDepthLevels[z][x][y+1] = 0;
-										underwaterDepthLevels[z][x+1][y+1] = 0;
+										underwaterDepthLevels[z][x + 1][y] = 0;
+										underwaterDepthLevels[z][x][y + 1] = 0;
+										underwaterDepthLevels[z][x + 1][y + 1] = 0;
 
 										skipTile[z][x][y] = true;
 
@@ -541,9 +541,9 @@ class ProceduralGenerator
 					else
 					{
 						underwaterDepthLevels[z][x][y] = 0;
-						underwaterDepthLevels[z][x+1][y] = 0;
-						underwaterDepthLevels[z][x][y+1] = 0;
-						underwaterDepthLevels[z][x+1][y+1] = 0;
+						underwaterDepthLevels[z][x + 1][y] = 0;
+						underwaterDepthLevels[z][x][y + 1] = 0;
+						underwaterDepthLevels[z][x + 1][y + 1] = 0;
 					}
 				}
 			}
@@ -692,8 +692,8 @@ class ProceduralGenerator
 									int localVertexY = vertices[vertex][1] - (y * Perspective.LOCAL_TILE_SIZE);
 									float lerpX = (float) localVertexX / (float) Perspective.LOCAL_TILE_SIZE;
 									float lerpY = (float) localVertexY / (float) Perspective.LOCAL_TILE_SIZE;
-									float northHeightOffset = HDUtils.lerp(underwaterDepths[z][x][y+1], underwaterDepths[z][x+1][y+1], lerpX);
-									float southHeightOffset = HDUtils.lerp(underwaterDepths[z][x][y], underwaterDepths[z][x+1][y], lerpX);
+									float northHeightOffset = HDUtils.lerp(underwaterDepths[z][x][y + 1], underwaterDepths[z][x + 1][y + 1], lerpX);
+									float southHeightOffset = HDUtils.lerp(underwaterDepths[z][x][y], underwaterDepths[z][x + 1][y], lerpX);
 									int heightOffset = (int) HDUtils.lerp(southHeightOffset, northHeightOffset, lerpY);
 
 									if (!vertexIsLand.containsKey(vertexKeys[vertex]))
@@ -851,7 +851,7 @@ class ProceduralGenerator
 
 		if (hdPlugin.configWaterEffects == WaterEffects.SIMPLE)
 		{
-			switch(waterType)
+			switch (waterType)
 			{
 				case WATER:
 					waterType = WaterType.WATER_FLAT;
@@ -904,7 +904,7 @@ class ProceduralGenerator
 
 		if (hdPlugin.configWaterEffects == WaterEffects.SIMPLE)
 		{
-			switch(waterType)
+			switch (waterType)
 			{
 				case WATER:
 					waterType = WaterType.WATER_FLAT;

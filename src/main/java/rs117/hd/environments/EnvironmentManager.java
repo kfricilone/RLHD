@@ -25,20 +25,22 @@
 package rs117.hd.environments;
 
 import com.google.common.primitives.Floats;
-import java.util.ArrayList;
-import javax.inject.Inject;
-import javax.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.Constants;
-import static net.runelite.api.Constants.CHUNK_SIZE;
 import net.runelite.api.GameState;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
+import rs117.hd.HDUtils;
 import rs117.hd.HdPlugin;
 import rs117.hd.HdPluginConfig;
-import rs117.hd.HDUtils;
 import rs117.hd.config.DefaultSkyColor;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import java.util.ArrayList;
+
+import static net.runelite.api.Constants.CHUNK_SIZE;
 
 @Singleton
 @Slf4j
@@ -77,14 +79,14 @@ public class EnvironmentManager
 	// previous camera target world Y
 	private int prevCamTargetY = 0;
 
-	private float[] startFogColor = new float[]{0,0,0};
-	public float[] currentFogColor = new float[]{0,0,0};
+	private float[] startFogColor = new float[]{0, 0, 0};
+	public float[] currentFogColor = new float[]{0, 0, 0};
 	public int currentFogColorInt = 0;
-	private float[] targetFogColor = new float[]{0,0,0};
+	private float[] targetFogColor = new float[]{0, 0, 0};
 
-	private float[] startWaterColor = new float[]{0,0,0};
-	public float[] currentWaterColor = new float[]{0,0,0};
-	private float[] targetWaterColor = new float[]{0,0,0};
+	private float[] startWaterColor = new float[]{0, 0, 0};
+	public float[] currentWaterColor = new float[]{0, 0, 0};
+	private float[] targetWaterColor = new float[]{0, 0, 0};
 
 	private int startFogDepth = 0;
 	public int currentFogDepth = 0;
@@ -94,25 +96,25 @@ public class EnvironmentManager
 	public float currentAmbientStrength = 0f;
 	private float targetAmbientStrength = 0f;
 
-	private float[] startAmbientColor = new float[]{0,0,0};
-	public float[] currentAmbientColor = new float[]{0,0,0};
-	private float[] targetAmbientColor = new float[]{0,0,0};
+	private float[] startAmbientColor = new float[]{0, 0, 0};
+	public float[] currentAmbientColor = new float[]{0, 0, 0};
+	private float[] targetAmbientColor = new float[]{0, 0, 0};
 
 	private float startDirectionalStrength = 0f;
 	public float currentDirectionalStrength = 0f;
 	private float targetDirectionalStrength = 0f;
 
-	private float[] startDirectionalColor = new float[]{0,0,0};
-	public float[] currentDirectionalColor = new float[]{0,0,0};
-	private float[] targetDirectionalColor = new float[]{0,0,0};
+	private float[] startDirectionalColor = new float[]{0, 0, 0};
+	public float[] currentDirectionalColor = new float[]{0, 0, 0};
+	private float[] targetDirectionalColor = new float[]{0, 0, 0};
 
 	private float startUnderglowStrength = 0f;
 	public float currentUnderglowStrength = 0f;
 	private float targetUnderglowStrength = 0f;
 
-	private float[] startUnderglowColor = new float[]{0,0,0};
-	public float[] currentUnderglowColor = new float[]{0,0,0};
-	private float[] targetUnderglowColor = new float[]{0,0,0};
+	private float[] startUnderglowColor = new float[]{0, 0, 0};
+	public float[] currentUnderglowColor = new float[]{0, 0, 0};
+	private float[] targetUnderglowColor = new float[]{0, 0, 0};
 
 	private float startGroundFogStart = 0f;
 	public float currentGroundFogStart = 0f;

@@ -25,10 +25,11 @@
 package rs117.hd.lighting;
 
 import com.google.common.collect.ImmutableMap;
-import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import rs117.hd.lighting.LightManager.LightType;
+
+import java.util.Map;
 
 @AllArgsConstructor
 @Getter
@@ -89,7 +90,7 @@ enum ProjectileLight
 	// Arrows/bolts
 	MAGIC_BOW_SPEC_AND_CRYSTAL_BOW( 250, 3f, rgb(52, 235, 113), LightType.STATIC, 0, 0, 300, 249),
 	CRAWS_BOW( 250, 3f, rgb(255, 199, 102), LightType.STATIC, 0, 0, 300, 1574),
-	FIRE_ARROWS(200, 2.5f, rgb(252,122,3), LightType.FLICKER, 0, 30, 300, 17),
+	FIRE_ARROWS(200, 2.5f, rgb(252, 122, 3), LightType.FLICKER, 0, 30, 300, 17),
 	ARMADYL_CROSSBOW_SPEC(250, 3f, rgb(255, 255, 255), LightType.STATIC, 0, 0, 300, 301),
 
 	// TzHaar

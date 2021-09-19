@@ -40,7 +40,6 @@ import jogamp.opengl.macosx.cgl.CGL;
 import jogamp.opengl.windows.wgl.WindowsWGLContext;
 import jogamp.opengl.x11.glx.X11GLXContext;
 import lombok.extern.slf4j.Slf4j;
-import net.runelite.client.plugins.gpu.GpuPlugin;
 import net.runelite.client.plugins.gpu.template.Template;
 import net.runelite.client.util.OSType;
 import org.jocl.CL;
@@ -437,9 +436,9 @@ class OpenCLManager
 		GLBuffer outVertexBuffer,
 		GLBuffer outUvBuffer,
 		GLBuffer uniformBuffer,
-	    GLBuffer normalOutBuffer,
-	    GLBuffer normalBuffer,
-	    GLBuffer tempNormalBuffer
+		GLBuffer normalOutBuffer,
+		GLBuffer normalBuffer,
+		GLBuffer tempNormalBuffer
 	)
 	{
 		cl_mem[] glBuffersAll = {

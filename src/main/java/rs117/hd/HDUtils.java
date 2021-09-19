@@ -58,9 +58,11 @@ class HDUtils
 		return out;
 	}
 
-	static float[] vectorAdd(float[] vec1, int[] vec2) {
+	static float[] vectorAdd(float[] vec1, int[] vec2)
+	{
 		float[] out = new float[vec1.length];
-		for (int i = 0; i < vec1.length; i++) {
+		for (int i = 0; i < vec1.length; i++)
+		{
 			out[i] = vec1[i] + vec2[i];
 		}
 		return out;
@@ -99,11 +101,13 @@ class HDUtils
 	static float[] vectorDivide(float[] vec1, float divide)
 	{
 		float[] out = new float[vec1.length];
-		for (int i = 0; i < vec1.length; i++) {
+		for (int i = 0; i < vec1.length; i++)
+		{
 			if (divide == 0)
 			{
 				out[i] = 0;
-			} else
+			}
+			else
 			{
 				out[i] = vec1[i] / divide;
 			}
@@ -111,7 +115,8 @@ class HDUtils
 		return out;
 	}
 
-	public static float lerp(float a, float b, float t) {
+	public static float lerp(float a, float b, float t)
+	{
 		return a + ((b - a) * t);
 	}
 
@@ -161,7 +166,7 @@ class HDUtils
 		float[] a = subVec3(new float[3], vPosition[0], vPosition[1]);
 		float[] b = subVec3(new float[3], vPosition[0], vPosition[2]);
 		// cross
-		return crossVec3(new float[3], a,b);
+		return crossVec3(new float[3], a, b);
 	}
 
 	static int[] colorIntToHSL(int colorInt)
@@ -187,9 +192,11 @@ class HDUtils
 		return colorHSLToRGB(outHSL[0], outHSL[1], outHSL[2]);
 	}
 
-	public static int colorRGBToInt(float[] colorRGB) {
+	public static int colorRGBToInt(float[] colorRGB)
+	{
 		int[] colorRGBInt = new int[3];
-		for (int i = 0; i < colorRGB.length; i++) {
+		for (int i = 0; i < colorRGB.length; i++)
+		{
 			colorRGBInt[i] = (int)(colorRGB[i] * 255);
 		}
 		return (colorRGBInt[0] << 8 | colorRGBInt[1]) << 8 | colorRGBInt[2] | 134217728;

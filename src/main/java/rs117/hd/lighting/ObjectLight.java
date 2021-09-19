@@ -29,8 +29,6 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import static net.runelite.api.NullObjectID.NULL_5208;
-import static net.runelite.api.NullObjectID.NULL_5247;
 import net.runelite.api.ObjectID;
 import static net.runelite.api.ObjectID.*;
 import static rs117.hd.lighting.LightManager.Alignment;
